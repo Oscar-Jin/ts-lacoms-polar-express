@@ -10,7 +10,7 @@ import {
   Content,
   Sidebar,
 } from "rsuite";
-import { vh100, h100 } from "../style/style";
+import { vh100, h100 } from "../react/style/style";
 
 const NavToggle: React.FC<{ expand: boolean; onChange: () => void }> = ({
   expand,

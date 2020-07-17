@@ -4,27 +4,32 @@ import { Navbar, Nav, Icon } from "rsuite";
 
 const RSNavbar = () => {
   return (
-    <Navbar style={navbarStyles}>
-      <Navbar.Header>
-        <NavBrand>
-          <Icon icon="export" size="lg" style={iconStyles} />
-          Polar Express
-        </NavBrand>
-      </Navbar.Header>
-      <Navbar.Body>
-        <Nav pullRight>
-          <Nav.Item icon={<Icon icon="sign-out" />}>Log Out</Nav.Item>
-        </Nav>
-      </Navbar.Body>
-    </Navbar>
+    <div>
+      <Navbar style={navbarStyles}>
+        <Navbar.Header>
+          <NavBrand>
+            <Icon icon="export" size="lg" style={iconStyles} />
+            Polar Express
+          </NavBrand>
+        </Navbar.Header>
+        <Navbar.Body>
+          <Nav pullRight>
+            <Nav.Item icon={<Icon icon="sign-out" />}>Log Out</Nav.Item>
+          </Nav>
+        </Navbar.Body>
+      </Navbar>
+    </div>
   );
 };
 
-const navbarStyles = {
+const navbarStyles: React.CSSProperties = {
   borderBottom: "1px solid #dee2e6",
+  position: "fixed",
+  zIndex: 1,
+  width: "100vw",
 };
 
-const iconStyles = {
+const iconStyles: React.CSSProperties = {
   marginRight: "0.3rem",
 };
 
