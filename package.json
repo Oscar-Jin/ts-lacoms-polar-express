@@ -1,5 +1,5 @@
 {
-  "name": "lacoms-polar-express",
+  "name": "ts-lacoms-polar-express",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
