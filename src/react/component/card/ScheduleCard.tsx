@@ -37,9 +37,9 @@ const ScheduleCard: React.FC<{ lesson: Lesson }> = props => {
 };
 
 const scheduleCardStyles: React.CSSProperties = {
-  padding: "1rem",
-  marginBottom: "0.5rem",
-  borderRadius: "0.4px",
+  padding: "0.6rem",
+  marginBottom: "0.4rem",
+  borderRadius: "3px",
   boxShadow: "0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) ",
   flexWrap: "nowrap",
 };
