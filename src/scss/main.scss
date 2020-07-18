@@ -19,3 +19,44 @@
   border: 1px solid red;
 }
 // <───────────────────────────────────────────────────────────────────────┘
+
+//  ───────────────────────────────────────────────────────── BOOTSTRAP ───┐
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+// <───────────────────────────────────────────────────────────────────────┘
+
+//  ─────────────────────────────────────────────────────── BG GRADIENT ───┐
+
+.blue-ocean {
+  background-image: linear-gradient(
+    to right top,
+    #3430ff,
+    #2651ff,
+    #2e69ff,
+    #457efc,
+    #6091f4,
+    #58a2f8,
+    #5cb1f9,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+
+// <───────────────────────────────────────────────────────────────────────┘

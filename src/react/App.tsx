@@ -1,33 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavPane from "./control/NavPane";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import SchedulePage from "./page/SchedulePage";
-import SettingsPage from "./page/SettingsPage";
+import { Switch, Route, useHistory } from "react-router-dom";
+import LoginPage from "./page/LoginPage";
+import LogoutPage from "./page/LogoutPage";
+import { Path } from "./component/navigation/NavTools";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const App = () => {
+  const user = useSelector((state: RootState) => state.user);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (user?.uid) {
+      history.push(Path.schedule);
+    } else {
+      history.push(Path.login);
+    }
+  }, [user, history]);
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavPane>
-          <Switch>
-            <Route exact path={Path.home} component={RedirectToSchedule} />
-            <Route path={Path.schedule} component={SchedulePage} />
-            <Route path={Path.settings} component={SettingsPage} />
-          </Switch>
-        </NavPane>
-      </BrowserRouter>
+      <Switch>
+        <Route path={Path.login} component={LoginPage} />
+        <Route path={Path.logout} component={LogoutPage} />
+        <Route path={Path.home} component={NavPane} />
+      </Switch>
     </div>
   );
-};
-
-const RedirectToSchedule = () => {
-  return <Redirect to={Path.schedule} />;
-};
-
-export const Path = {
-  home: "/",
-  schedule: "/schedule",
-  settings: "/settings",
 };
 
 export default App;
