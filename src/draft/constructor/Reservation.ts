@@ -1,3 +1,12 @@
+export enum ReservationState {
+  reserved = "reserved",
+  attended = "attended",
+  cancelled = "cancelled",
+  cancelledWithPenalty = "cancelledWithPenalty",
+  cancelledWithPenaltyButRefundedAnyways = "cancelledWithPenaltyButRefundedAnyways",
+  noShow = "noShow",
+}
+
 export class Reservation {
   constructor(
     public lastName_hiragana: string,

@@ -6,12 +6,19 @@ import { FlexboxGridItemProps } from "rsuite/lib/FlexboxGrid/FlexboxGridItem";
 import SeatingIndicator from "../span/SeatingIndicator";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
+import { ReservationState } from "../../../draft/constructor/Reservation";
 
 const ScheduleCard: React.FC<{ lesson: Lesson }> = props => {
   const { lessonName, instructorName, id } = props.lesson;
 
   const reservations = useSelector((state: RootState) => state.reservations);
-  const reservationsToday = reservations.filter(R => R.lessonID === id);
+  const reservationsToday = reservations.filter(
+    R =>
+      R.lessonID === id &&
+      R.state !== ReservationState.cancelled &&
+      R.state !== ReservationState.cancelledWithPenalty &&
+      R.state !== ReservationState.cancelledWithPenaltyButRefundedAnyways
+  );
 
   return (
     <FlexboxGrid {...flexboxGridProps}>
