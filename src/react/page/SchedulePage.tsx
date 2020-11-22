@@ -25,7 +25,7 @@ const SchedulePage = () => {
         <Nav.Item eventKey="nextMonth">Next Month</Nav.Item>
       </Nav>
       <FlexboxGrid style={flexboxGridStyles} justify="end" align="middle">
-        <ToggleLabel>Hidden Dates</ToggleLabel>
+        <ToggleLabel>Hide Past</ToggleLabel>
         <Toggle defaultChecked onChange={() => setPartial(!partial)} />
       </FlexboxGrid>
 
@@ -77,9 +77,9 @@ const dateArrayFor = (seledtedMonth: SelectedMonth, partial: boolean) => {
 const momentWith = (seledtedMonth: SelectedMonth) => {
   switch (seledtedMonth) {
     case "thisMonth":
-      return moment();
+      return moment("2020-08-31");
     case "nextMonth":
-      return moment().add(1, "month");
+      return moment("2020-08-31").add(1, "month");
   }
 };
 
